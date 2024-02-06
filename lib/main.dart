@@ -4,7 +4,10 @@ void main() {
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title: const Text('My Coffee Id'),
+        title: const Text('My Coffee Id', style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        )),
         backgroundColor: Colors.brown[700],
         centerTitle: true,
       ),
@@ -24,7 +27,12 @@ class Home extends StatelessWidget {
       // height: 100,
       padding: const EdgeInsets.all(20),
       margin: const EdgeInsets.fromLTRB(10, 40, 0, 0),
-      child: const Text('Hello, ninjas!'),
+      child: const Text('Hello, ninjas!', style: TextStyle(
+        fontSize: 18,
+        letterSpacing: 4,
+        decoration: TextDecoration.underline,
+        fontStyle: FontStyle.italic,
+      ),),
     );
   }
 }
