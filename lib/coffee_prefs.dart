@@ -30,12 +30,14 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
         Row(
           children: [
             const Text('Strength: '),
-            Text('$strength'),
-            Image.asset('assets/img/coffee_bean.png',
-              width: 25,
-              colorBlendMode: BlendMode.multiply,
-              color: Colors.brown[100],
-            ),
+
+            for (int i = 0; i < strength; i++) 
+              Image.asset('assets/img/coffee_bean.png',
+                width: 25,
+                colorBlendMode: BlendMode.multiply,
+                color: Colors.brown[100],
+              ),
+
             const Expanded(child: SizedBox()),
             FilledButton(
               style: FilledButton.styleFrom(
@@ -50,12 +52,17 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
         Row(
           children: [
             const Text('Sugars: '),
-            Text('$sugars'),
-            Image.asset('assets/img/sugar_cube.png',
-              width: 25,
-              colorBlendMode: BlendMode.multiply,
-              color: Colors.brown[100],
-            ),
+            
+            if (sugars == 0) 
+              const Text('None...'),
+            
+            for (int i = 0; i < sugars; i++)
+              Image.asset('assets/img/sugar_cube.png',
+                width: 25,
+                colorBlendMode: BlendMode.multiply,
+                color: Colors.brown[100],
+              ),
+              
             const Expanded(child: SizedBox()),
             TextButton(
               style: TextButton.styleFrom(
