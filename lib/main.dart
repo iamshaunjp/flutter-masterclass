@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_masterclass/home.dart';
+import 'package:flutter_masterclass/screens/home/home.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -18,27 +18,7 @@ class Sandbox extends StatelessWidget {
         title: const Text('Sandbox'),
         backgroundColor: Colors.grey,
       ),
-      body: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            height: 100,
-            color: Colors.red,
-            child: const Text('one'),
-          ),
-          Container(
-            height: 200,
-            color: Colors.green,
-            child: const Text('two'),
-          ),
-          Container(
-            height: 300,
-            color: Colors.blue,
-            child: const Text('three'),
-          )
-        ]
-      ),
+      body: const Text('sandbox')
     );
   }
 }
