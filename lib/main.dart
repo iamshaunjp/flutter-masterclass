@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masterclass/screens/home/home.dart';
+import 'package:flutter_masterclass/theme.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: Home(),
+  runApp(MaterialApp(
+    theme: primaryTheme,
+    home: const Home(),
   ));
 }
 
