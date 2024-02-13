@@ -11,6 +11,7 @@ class AppColors {
   static Color highlightColor = const Color.fromRGBO(212, 172, 13, 1);
 }
 
+
 ThemeData primaryTheme = ThemeData(
 
   // seed color theme
