@@ -11,20 +11,18 @@ class AppColors {
   static Color highlightColor = const Color.fromRGBO(212, 172, 13, 1);
 }
 
-ColorScheme _scheme = ColorScheme.fromSeed(
-    seedColor: AppColors.primaryColor,
-);
-
-ThemeData primaryTheme = ThemeData().copyWith(
+ThemeData primaryTheme = ThemeData(
 
   // seed color theme
-  colorScheme: _scheme,
+  colorScheme: ColorScheme.fromSeed(
+    seedColor: AppColors.primaryColor,
+  ),
 
   // scaffold color
   scaffoldBackgroundColor: AppColors.secondaryAccent,
 
   // app bar theme colors
-  appBarTheme: const AppBarTheme().copyWith(
+  appBarTheme: AppBarTheme(
     backgroundColor: AppColors.secondaryColor,
     foregroundColor: AppColors.textColor,
     surfaceTintColor: Colors.transparent,
