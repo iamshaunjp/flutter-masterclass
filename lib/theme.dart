@@ -50,4 +50,13 @@ ThemeData primaryTheme = ThemeData(
     ),
   ),
 
+  // card theme
+  cardTheme: CardTheme(
+    color: AppColors.secondaryColor.withOpacity(0.5),
+    surfaceTintColor: Colors.transparent,
+    shape: const RoundedRectangleBorder(),
+    shadowColor: Colors.transparent,
+    margin: const EdgeInsets.only(bottom: 16),
+  ),
+
 );

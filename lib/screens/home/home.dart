@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_masterclass/screens/home/character_card.dart';
 import 'package:flutter_masterclass/shared/styled_button.dart';
 import 'package:flutter_masterclass/shared/styled_text.dart';
 
@@ -29,12 +30,7 @@ class _HomeState extends State<Home> {
               child: ListView.builder(
                 itemCount: characters.length,
                 itemBuilder: (_, index) {
-                  return Container(
-                    color: Colors.grey[800],
-                    padding: const EdgeInsets.all(40),
-                    margin: const EdgeInsets.only(bottom: 40),
-                    child: Text(characters[index]),
-                  );
+                  return CharacterCard(characters[index]);
                 }
               ),
             ),
