@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_masterclass/shared/styled_button.dart';
 import 'package:flutter_masterclass/shared/styled_text.dart';
 
 class Home extends StatefulWidget {
@@ -24,11 +25,11 @@ class _HomeState extends State<Home> {
             const StyledHeading('heading'),
             const StyledText('text'),
             
-            FilledButton(
+            StyledButton(
               onPressed: () {
                 // navigate to the create screen
               },
-              child: const Text('Create New'),
+              child: const StyledHeading('Create New'),
             ),
           ]
         ),
