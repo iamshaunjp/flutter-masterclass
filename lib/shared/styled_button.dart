@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_masterclass/theme.dart';
 
 class StyledButton extends StatelessWidget {
   const StyledButton({
@@ -16,13 +17,13 @@ class StyledButton extends StatelessWidget {
       onPressed: onPressed,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color.fromRGBO(162, 29, 19, 1), Color.fromRGBO(120, 14, 14, 1)],
+            colors: [AppColors.primaryColor, AppColors.primaryAccent],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter
           ),
-          borderRadius: BorderRadius.all(Radius.circular(5)),
+          borderRadius: const BorderRadius.all(Radius.circular(5)),
         ),
         child: child,
       ),
