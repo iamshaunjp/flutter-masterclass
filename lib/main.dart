@@ -20,7 +20,7 @@ class Sandbox extends StatelessWidget {
         title: const Text('Sandbox'),
         backgroundColor: Colors.grey,
       ),
-      body: const Text('sandbox')
+      body: const Text('sandbox'),
     );
   }
 }
