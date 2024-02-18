@@ -1,0 +1,36 @@
+Character Model (class)
+
+  -> id (int/string?)
+
+  -> name (string)
+
+  -> slogan (string)
+
+  -> isFav (boolean)
+
+  -> vocation (enhanced enum)
+       -> thumb (string)
+       -> title (string)
+       -> description (string)
+       -> ability (string)
+       -> weapon (string)
+       
+  -> skills (set of type Skill (class))
+       -> name (string)
+       -> thumb (string)
+       -> description (string)
+       -> vocation (Vocation - associated vocation for skill)
+       -> id (int/string?)
+
+  -> stats (mixin)
+       -> health (int)
+       -> attack (int)
+       -> defense (int)
+       -> skill (int)
+       -> points (int)
+
+
+
+  
+
+
