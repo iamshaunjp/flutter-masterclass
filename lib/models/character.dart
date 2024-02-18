@@ -1,4 +1,6 @@
-class Character {
+import 'package:flutter_masterclass/models/stats.dart';
+
+class Character with Stats {
 
   // constructor 
   Character({ 
