@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_masterclass/models/character.dart';
 import 'package:flutter_masterclass/models/vocation.dart';
 import 'package:flutter_masterclass/screens/create/vocation_card.dart';
 import 'package:flutter_masterclass/shared/styled_button.dart';
 import 'package:flutter_masterclass/shared/styled_text.dart';
 import 'package:flutter_masterclass/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uuid/uuid.dart';
+
+var uuid = const Uuid();
 
 class Create extends StatefulWidget {
   const Create({super.key});
@@ -45,6 +49,14 @@ class _CreateState extends State<Create> {
       // show error in dialog
       return;
     }
+
+    characters.add(Character(
+      name: _nameController.text.trim(),
+      slogan: _sloganController.text.trim(),
+      vocation: selectedVocation,
+      id: uuid.v4(),
+    ));
+
   }
 
   @override
@@ -130,6 +142,17 @@ class _CreateState extends State<Create> {
                 onTap: updateVocation,
                 selected: selectedVocation == Vocation.raider,
               ),
+
+              // good luck message
+              Center(
+                child: Icon(Icons.code, color: AppColors.primaryColor)
+              ),
+              const Center(
+                child: StyledHeading('Good Luck.')),
+              const Center(
+                child: StyledText('And enjoy the journey ahead...'),
+              ),
+              const SizedBox(height: 30),
           
               // submit button
               Center(
