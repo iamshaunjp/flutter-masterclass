@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_masterclass/models/character.dart';
 import 'package:flutter_masterclass/models/vocation.dart';
 import 'package:flutter_masterclass/screens/create/vocation_card.dart';
+import 'package:flutter_masterclass/screens/home/home.dart';
 import 'package:flutter_masterclass/shared/styled_button.dart';
 import 'package:flutter_masterclass/shared/styled_text.dart';
 import 'package:flutter_masterclass/theme.dart';
@@ -55,6 +56,10 @@ class _CreateState extends State<Create> {
       slogan: _sloganController.text.trim(),
       vocation: selectedVocation,
       id: uuid.v4(),
+    ));
+
+    Navigator.push(context, MaterialPageRoute(
+      builder: (ctx) => const Home(),
     ));
 
   }
