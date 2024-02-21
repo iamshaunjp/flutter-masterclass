@@ -11,6 +11,18 @@ class Create extends StatefulWidget {
 }
 
 class _CreateState extends State<Create> {
+
+  final _nameController = TextEditingController();
+  final _sloganController = TextEditingController();
+
+  @override
+  void dispose() {
+    // clean up the controller when the widget is disposed
+    _nameController.dispose();
+    _sloganController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +48,7 @@ class _CreateState extends State<Create> {
 
             // input for name & slogan
             TextField(
+              controller: _nameController,
               cursorColor: AppColors.textColor,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.person_2),
@@ -47,6 +60,7 @@ class _CreateState extends State<Create> {
             ),
             const SizedBox(height: 20),
             TextField(
+              controller: _sloganController,
               cursorColor: AppColors.textColor,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.chat),
@@ -57,7 +71,6 @@ class _CreateState extends State<Create> {
               ),
             ),
             const SizedBox(height: 30),
-            TextField(),
 
           ],
         ),
