@@ -46,8 +46,6 @@ class _CreateState extends State<Create> {
       
       showDialog(context: context, builder: (ctx) {
         return AlertDialog(
-          backgroundColor: AppColors.secondaryAccent,
-          surfaceTintColor: AppColors.secondaryAccent,
           title: const StyledHeading('Missing Character Name'),
           content: const StyledText('Every good RPG character needs a great name...'),
           actions: [
@@ -66,8 +64,6 @@ class _CreateState extends State<Create> {
 
       showDialog(context: context, builder: (ctx) {
         return AlertDialog(
-          backgroundColor: AppColors.secondaryAccent,
-          surfaceTintColor: AppColors.secondaryAccent,
           title: const StyledHeading('Missing Character Slogan'),
           content: const StyledText('Remember to add a catchy saying...'),
           actions: [
