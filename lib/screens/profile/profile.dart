@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masterclass/models/character.dart';
+import 'package:flutter_masterclass/screens/profile/skill_list.dart';
 import 'package:flutter_masterclass/screens/profile/stats_table.dart';
 import 'package:flutter_masterclass/shared/styled_text.dart';
 import 'package:flutter_masterclass/theme.dart';
@@ -80,6 +81,7 @@ class Profile extends StatelessWidget {
               child: Column(
                 children: [
                   StatsTable(character),
+                  SkillList(character),
                 ]
               ),
             ),
