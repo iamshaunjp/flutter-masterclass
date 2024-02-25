@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masterclass/models/character.dart';
+import 'package:flutter_masterclass/screens/profile/stats_table.dart';
 import 'package:flutter_masterclass/shared/styled_text.dart';
 import 'package:flutter_masterclass/theme.dart';
 
@@ -74,7 +75,14 @@ class Profile extends StatelessWidget {
             ),
 
             // stats & skills
-
+            Container(
+              alignment: Alignment.center,
+              child: Column(
+                children: [
+                  StatsTable(character),
+                ]
+              ),
+            ),
 
             // save button
 
