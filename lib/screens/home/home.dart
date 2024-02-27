@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_masterclass/models/character.dart';
 import 'package:flutter_masterclass/screens/create/create.dart';
 import 'package:flutter_masterclass/screens/home/character_card.dart';
+import 'package:flutter_masterclass/services/character_store.dart';
 import 'package:flutter_masterclass/shared/styled_button.dart';
 import 'package:flutter_masterclass/shared/styled_text.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -27,10 +28,14 @@ class _HomeState extends State<Home> {
           children: [
             // list of characters
             Expanded(
-              child: ListView.builder(
-                itemCount: characters.length,
-                itemBuilder: (_, index) {
-                  return CharacterCard(characters[index]);
+              child: Consumer<CharacterStore>(
+                builder: (context, value, child) {
+                  return ListView.builder(
+                    itemCount: value.characters.length,
+                    itemBuilder: (_, index) {
+                      return CharacterCard(value.characters[index]);
+                    }
+                  );
                 }
               ),
             ),
@@ -38,7 +43,7 @@ class _HomeState extends State<Home> {
             StyledButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                  builder: (ctx) => const Create(),
+                  builder: (ctx) => const CreateScreen(),
                 ));
               },
               child: const StyledHeading('Create New'),

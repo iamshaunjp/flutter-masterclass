@@ -12,5 +12,5 @@ class CharacterStore extends ChangeNotifier {
   ];
 
   get characters => _characters;
-
+  
 }
