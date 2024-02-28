@@ -20,7 +20,7 @@ class CharacterStore extends ChangeNotifier {
   }
 
   // save (update) character
-  
+
 
   // remove character
 
