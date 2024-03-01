@@ -10,4 +10,8 @@ class FirestoreService {
       toFirestore: (Character c, _) => c.toFirestore()
     );
 
+  // add a new character
+  static Future<void> addCharacter(Character character) async {
+    await ref.doc(character.id).set(character);
+  }
 }
