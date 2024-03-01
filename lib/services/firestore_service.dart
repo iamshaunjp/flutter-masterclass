@@ -14,4 +14,9 @@ class FirestoreService {
   static Future<void> addCharacter(Character character) async {
     await ref.doc(character.id).set(character);
   }
+
+  // get characters once
+  static Future<QuerySnapshot<Character>> getCharactersOnce() {
+    return ref.get();
+  }
 }
