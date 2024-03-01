@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_masterclass/models/character.dart';
 import 'package:flutter_masterclass/screens/profile/skill_list.dart';
 import 'package:flutter_masterclass/screens/profile/stats_table.dart';
+import 'package:flutter_masterclass/services/character_store.dart';
 import 'package:flutter_masterclass/shared/styled_button.dart';
 import 'package:flutter_masterclass/shared/styled_text.dart';
 import 'package:flutter_masterclass/theme.dart';
+import 'package:provider/provider.dart';
 
 class Profile extends StatelessWidget {
   const Profile({
@@ -89,6 +91,10 @@ class Profile extends StatelessWidget {
 
             // save button
             StyledButton(onPressed: () {
+              // update in db
+              Provider.of<CharacterStore>(context, listen: false)
+                .saveCharacter(character);
+
               // show snackbar
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 content: const StyledHeading('Character saved.'),
