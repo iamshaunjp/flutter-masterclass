@@ -40,12 +40,21 @@ class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      icon: Icon(Icons.favorite, 
-        color: Colors.grey[800],
-      ),
-      onPressed: () {
-        widget.character.toggleIsFav();
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) {
+        return IconButton(
+          icon: Icon(Icons.favorite, 
+            color: Colors.grey[800],
+            size: _sizeAnimation.value
+          ),
+          onPressed: () {
+            _controller.reset();
+            _controller.forward();
+
+            widget.character.toggleIsFav();
+          }
+        );
       }
     );
   }
