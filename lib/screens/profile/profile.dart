@@ -33,9 +33,12 @@ class Profile extends StatelessWidget {
               color: AppColors.secondaryColor.withOpacity(0.3),
               child: Row(
                 children: [
-                  Image.asset('assets/img/vocations/${character.vocation.image}',
-                    width: 140,
-                    height: 140,
+                  Hero(
+                    tag: character.id.toString(),
+                    child: Image.asset('assets/img/vocations/${character.vocation.image}',
+                      width: 140,
+                      height: 140,
+                    ),
                   ),
                   const SizedBox(width: 20),
                   Expanded(
