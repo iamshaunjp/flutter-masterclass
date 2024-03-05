@@ -12,6 +12,7 @@ class Heart extends StatefulWidget {
 
 class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
+  late Animation _sizeAnimation;
 
   @override
   void initState() {
@@ -21,6 +22,18 @@ class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
       vsync: this,
       duration: const Duration(milliseconds: 200),
     );
+
+    // size animation tween 
+    _sizeAnimation = TweenSequence([
+      TweenSequenceItem<double>(
+        tween: Tween(begin: 25, end: 40),
+        weight: 50
+      ),
+      TweenSequenceItem<double>(
+        tween: Tween(begin: 40, end: 25),
+        weight: 50
+      )
+    ]).animate(_controller);
 
     super.initState();
   }
