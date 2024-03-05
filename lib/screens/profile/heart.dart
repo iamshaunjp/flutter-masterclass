@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masterclass/models/character.dart';
+import 'package:flutter_masterclass/theme.dart';
 
 class Heart extends StatefulWidget {
   const Heart({super.key, required this.character});
@@ -45,7 +46,8 @@ class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
       builder: (context, child) {
         return IconButton(
           icon: Icon(Icons.favorite, 
-            color: Colors.grey[800],
+            color: widget.character.isFav ? 
+              AppColors.primaryColor : Colors.grey[800],
             size: _sizeAnimation.value
           ),
           onPressed: () {
